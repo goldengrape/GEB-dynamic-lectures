@@ -19,7 +19,7 @@ interface Line {
 }
 
 // --- 1. STACK TREE VIZ (Original) ---
-const StackTreeViz: React.FC = () => {
+export const StackTreeViz: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [stack, setStack] = useState<StackFrame[]>([]);
@@ -148,7 +148,7 @@ const StackTreeViz: React.FC = () => {
 };
 
 // --- 2. KOCH CURVE VIZ ---
-const KochViz: React.FC = () => {
+export const KochViz: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [depth, setDepth] = useState(0);
   
@@ -210,7 +210,7 @@ const KochViz: React.FC = () => {
 };
 
 // --- 3. CHAOS GAME VIZ (Sierpinski) ---
-const ChaosGameViz: React.FC = () => {
+export const ChaosGameViz: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [isRunning, setIsRunning] = useState(false);
     const [points, setPoints] = useState(0);
@@ -289,7 +289,7 @@ const ChaosGameViz: React.FC = () => {
 };
 
 // --- 4. MANDELBROT VIZ ---
-const MandelbrotViz: React.FC = () => {
+export const MandelbrotViz: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [rendered, setRendered] = useState(false);
 
@@ -358,49 +358,6 @@ const MandelbrotViz: React.FC = () => {
             <p className="text-xs text-gray-500 mt-2 max-w-xs text-center">
                 z = z² + c. 黑色区域为集合内部，彩色为逃逸速度。
             </p>
-        </div>
-    );
-};
-
-// --- MAIN WRAPPER ---
-export const FractalStackViz: React.FC = () => {
-    const [tab, setTab] = useState<'stack' | 'koch' | 'chaos' | 'mandelbrot'>('stack');
-
-    return (
-        <div className="w-full max-w-4xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-2 mb-6 p-1 bg-gray-100 rounded-lg inline-flex w-full">
-                <button 
-                    onClick={() => setTab('stack')}
-                    className={`flex-1 py-2 px-4 rounded text-sm font-medium transition-colors ${tab==='stack' ? 'bg-white shadow text-geb-dark' : 'text-gray-500 hover:text-gray-700'}`}
-                >
-                    递归树 (堆栈)
-                </button>
-                <button 
-                    onClick={() => setTab('koch')}
-                    className={`flex-1 py-2 px-4 rounded text-sm font-medium transition-colors ${tab==='koch' ? 'bg-white shadow text-geb-dark' : 'text-gray-500 hover:text-gray-700'}`}
-                >
-                    科赫曲线
-                </button>
-                <button 
-                    onClick={() => setTab('chaos')}
-                    className={`flex-1 py-2 px-4 rounded text-sm font-medium transition-colors ${tab==='chaos' ? 'bg-white shadow text-geb-dark' : 'text-gray-500 hover:text-gray-700'}`}
-                >
-                    混沌游戏
-                </button>
-                <button 
-                    onClick={() => setTab('mandelbrot')}
-                    className={`flex-1 py-2 px-4 rounded text-sm font-medium transition-colors ${tab==='mandelbrot' ? 'bg-white shadow text-geb-dark' : 'text-gray-500 hover:text-gray-700'}`}
-                >
-                    曼德博集合
-                </button>
-            </div>
-
-            <div className="min-h-[420px] animate-in fade-in duration-300">
-                {tab === 'stack' && <StackTreeViz />}
-                {tab === 'koch' && <KochViz />}
-                {tab === 'chaos' && <ChaosGameViz />}
-                {tab === 'mandelbrot' && <MandelbrotViz />}
-            </div>
         </div>
     );
 };
