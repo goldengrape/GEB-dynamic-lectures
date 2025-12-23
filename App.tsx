@@ -159,18 +159,31 @@ const App: React.FC = () => {
                   {activeChapter === ChapterId.LECTURE_2 && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-gray-100 p-6 rounded-lg border border-gray-200">
-                            <h4 className="font-serif font-bold text-geb-dark mb-2">推入 (Push) 与 弹出 (Pop)</h4>
+                            <h4 className="font-serif font-bold text-geb-dark mb-2">1. 递归与堆栈 (Recursive Stack)</h4>
                             <p className="text-sm text-gray-700">
-                                就像巴赫的《和声小迷宫》一样，递归过程需要“记住”它来时的路。
-                                每当我们进入更深一层的分支（Push），我们必须将当前位置存入堆栈。
-                                当分支结束时（Pop），我们回到上一步。没有堆栈，程序就会迷路。
+                                为了防止无限循环，递归必须“触底”并返回。计算机使用“堆栈”来记住它在嵌套结构中的位置。
+                                每一层新的分支都是一次“推入（Push）”，分支结束是一次“弹出（Pop）”。
                             </p>
                         </div>
                         <div className="bg-gray-100 p-6 rounded-lg border border-gray-200">
-                            <h4 className="font-serif font-bold text-geb-dark mb-2">递归转换网络 (RTN)</h4>
+                            <h4 className="font-serif font-bold text-geb-dark mb-2">2. 科赫曲线 (Koch Curve)</h4>
                             <p className="text-sm text-gray-700">
-                                语言也是递归的。一个句子可以包含另一个句子：“老鼠跑了” -> “猫追的那只老鼠跑了”。
-                                RTN 是定义这种嵌套结构的地图。分形则是视觉上的 RTN。
+                                一个经典的数学分形。通过在每条线段中间添加三角形，无论放大多少倍，形状都保持一致。
+                                它展示了有限的面积可以拥有无限的周长。
+                            </p>
+                        </div>
+                        <div className="bg-gray-100 p-6 rounded-lg border border-gray-200">
+                            <h4 className="font-serif font-bold text-geb-dark mb-2">3. 混沌游戏 (Chaos Game)</h4>
+                            <p className="text-sm text-gray-700">
+                                谢尔宾斯基三角形不仅可以通过确定性的递归移除中心产生，也可以通过随机性产生。
+                                简单的规则（“向随机顶点移动一半距离”）在大量迭代后涌现出复杂的有序结构。
+                            </p>
+                        </div>
+                         <div className="bg-gray-100 p-6 rounded-lg border border-gray-200">
+                            <h4 className="font-serif font-bold text-geb-dark mb-2">4. 曼德博集合 (Mandelbrot Set)</h4>
+                            <p className="text-sm text-gray-700">
+                                定义在复平面上的简单迭代 $z = z^2 + c$。
+                                它的边界极其复杂，也是递归定义的。如果点在迭代中不逃逸到无穷大，它就属于该集合（黑色部分）。
                             </p>
                         </div>
                       </div>
