@@ -10,7 +10,13 @@ export enum ChapterId {
   STACK_TREE = 'STACK_TREE',
   KOCH = 'KOCH',
   CHAOS = 'CHAOS',
-  MANDELBROT = 'MANDELBROT'
+  MANDELBROT = 'MANDELBROT',
+
+  // Lecture 3
+  GEOMETRY_MODELS = 'GEOMETRY_MODELS',
+  ZENO_PARADOX = 'ZENO_PARADOX',
+  GODEL_NUMBERING = 'GODEL_NUMBERING',
+  CONSISTENCY_COMPLETENESS = 'CONSISTENCY_COMPLETENESS'
 }
 
 export interface Chapter {
@@ -94,5 +100,35 @@ export const CHAPTERS: Chapter[] = [
     subtitle: "复平面上的递归",
     description: "定义在复平面上的简单迭代 z = z² + c，展现出极其复杂的边界。",
     lecture: "课程二：递归与分形"
+  },
+
+  // LECTURE 3
+  {
+    id: ChapterId.CONSISTENCY_COMPLETENESS,
+    title: "一致性与完全性",
+    subtitle: "完美的梦想",
+    description: "一致性意味着没有矛盾，完全性意味着所有真理皆可证明。哥德尔证明了我们不能同时拥有两者。",
+    lecture: "课程三：一致性与不完全性"
+  },
+  {
+    id: ChapterId.GEOMETRY_MODELS,
+    title: "非欧几何",
+    subtitle: "解释的力量",
+    description: "如果在球面上定义“直线”，三角形内角和还是180度吗？真理取决于形式系统的“解释”。",
+    lecture: "课程三：一致性与不完全性"
+  },
+  {
+    id: ChapterId.ZENO_PARADOX,
+    title: "芝诺与无穷",
+    subtitle: "有限时间的无限步骤",
+    description: "阿基里斯如何追上乌龟？几何级数展示了无限个步骤如何在有限时间内完成。",
+    lecture: "课程三：一致性与不完全性"
+  },
+  {
+    id: ChapterId.GODEL_NUMBERING,
+    title: "哥德尔配数",
+    subtitle: "系统内的内省",
+    description: "如何让数学谈论数学本身？通过将符号转化为数字，哥德尔构建了一个可以指代自身的悖论。",
+    lecture: "课程三：一致性与不完全性"
   }
 ];

@@ -6,7 +6,8 @@ import { FormalSystemViz } from './components/visualizations/FormalSystemViz';
 import { IsomorphismViz } from './components/visualizations/IsomorphismViz';
 import { MetaThinkingViz } from './components/visualizations/MetaThinkingViz';
 import { StackTreeViz, KochViz, ChaosGameViz, MandelbrotViz } from './components/visualizations/FractalStackViz';
-import { BookOpen, Music, Brain, Hash, GitMerge, Square, Menu, X, Layers, Activity, Triangle, Infinity as InfinityIcon } from 'lucide-react';
+import { GeometryViz, ZenoViz, GodelViz, ConsistencyViz } from './components/visualizations/Lecture3Viz';
+import { BookOpen, Music, Brain, Hash, GitMerge, Square, Menu, X, Layers, Activity, Triangle, Infinity as InfinityIcon, Globe, Box, Binary, ShieldCheck } from 'lucide-react';
 
 const App: React.FC = () => {
   const [activeChapter, setActiveChapter] = useState<ChapterId>(ChapterId.INTRO);
@@ -28,6 +29,12 @@ const App: React.FC = () => {
       case ChapterId.KOCH: return <KochViz />;
       case ChapterId.CHAOS: return <ChaosGameViz />;
       case ChapterId.MANDELBROT: return <MandelbrotViz />;
+
+      // Lecture 3
+      case ChapterId.GEOMETRY_MODELS: return <GeometryViz />;
+      case ChapterId.ZENO_PARADOX: return <ZenoViz />;
+      case ChapterId.GODEL_NUMBERING: return <GodelViz />;
+      case ChapterId.CONSISTENCY_COMPLETENESS: return <ConsistencyViz />;
 
       case ChapterId.INTRO:
       default:
@@ -69,6 +76,12 @@ const App: React.FC = () => {
         case ChapterId.KOCH: return <Activity size={18}/>;
         case ChapterId.CHAOS: return <Triangle size={18}/>;
         case ChapterId.MANDELBROT: return <InfinityIcon size={18}/>;
+
+        // Lecture 3
+        case ChapterId.GEOMETRY_MODELS: return <Globe size={18}/>;
+        case ChapterId.ZENO_PARADOX: return <Box size={18}/>;
+        case ChapterId.GODEL_NUMBERING: return <Binary size={18}/>;
+        case ChapterId.CONSISTENCY_COMPLETENESS: return <ShieldCheck size={18}/>;
     }
   };
 
@@ -178,6 +191,16 @@ const App: React.FC = () => {
                        <p className="text-sm text-gray-600 italic">
                            计算机使用“堆栈”来追踪递归调用，防止在无限的分支中迷失。
                        </p>
+                  )}
+                  {activeChapter === ChapterId.GEOMETRY_MODELS && (
+                      <p className="text-sm text-gray-600 italic">
+                          讲座指出，一致性（无矛盾）往往取决于我们的解释。欧几里得几何和非欧几何在各自的解释下都是一致的。
+                      </p>
+                  )}
+                  {activeChapter === ChapterId.ZENO_PARADOX && (
+                      <p className="text-sm text-gray-600 italic">
+                           这与《和声小迷宫》中的“金精”故事相呼应：通过每次将时间减半，无限的任务可以在有限的时间内完成。
+                      </p>
                   )}
               </div>
           </div>
