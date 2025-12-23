@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# GEB: An Interactive Exploration
+# GEB：集异璧之大成 - 互动讲座
 
-# Run and deploy your AI Studio app
+这是一个互动式 Web 应用程序，旨在通过可视化手段探索道格拉斯·霍夫斯塔特（Douglas Hofstadter）的著作《哥德尔、埃舍尔、巴赫：集异璧之大成》（GEB）中的核心概念。本项目内容基于 MIT OpenCourseWare 的相关课程讲座进行编排。
 
-This contains everything you need to run your app locally.
+## 📚 课程与模块
 
-View your app in AI Studio: https://ai.studio/apps/drive/1t-OgerYTJiNQxIUWukvyVrzMvI4BdHuj
+应用目前包含三堂核心讲座的互动演示：
 
-## Run Locally
+### 课程一：GEB 核心概念 (Core Concepts)
+探索无意义的元素如何结合创造意义、自指和意识。
+- **🧠 涌现 (Emergence)**: 粒子系统模拟。展示无序的原子（Chaos）如何在大规模互动中涌现出有序的“自我”（Order）。
+- **🔀 同构 (Isomorphism)**: 交互式 PQ 系统。演示无意义的符号（-p-q-）如何通过结构映射产生算术意义。
+- **🔄 递归基础 (Recursion)**: 谢尔宾斯基三角形生成器，展示由自身定义自身的几何结构。
+- **#️⃣ 形式系统 (Formal Systems)**: 经典的 **MU 谜题** 挑战。你能利用四条规则将 MI 变为 MU 吗？
+- **🎵 元思维 (Meta-thinking)**: 模拟系统死循环，演示智能体如何“跳出系统”进行反思。
 
-**Prerequisites:**  Node.js
+### 课程二：递归与分形 (Recursion & Fractals)
+深入探讨递归的机制、堆栈结构以及复杂的分形几何。
+- **📚 递归树与堆栈 (Recursive Stack)**: 实时可视化递归函数的调用栈（Push/Pop）与树状生成过程。
+- **❄️ 科赫曲线 (Koch Curve)**: 动态调整深度，展示“有限面积，无限周长”的几何奇迹。
+- **🎲 混沌游戏 (Chaos Game)**: 通过随机点迭代生成有序的谢尔宾斯基三角形。
+- **♾️ 曼德博集合 (Mandelbrot Set)**: 复平面上的迭代可视化，展示简单的 $z = z^2 + c$ 公式如何生成无穷复杂的边界。
 
+### 课程三：一致性与不完全性 (Consistency & Completeness)
+探讨数学系统的局限性、几何模型解释以及哥德尔定理的机制。
+- **🌐 非欧几何 (Non-Euclidean Geometry)**: 交互式曲率滑块。在双曲空间、平坦空间和球面空间中观察三角形内角和的变化。
+- **📦 芝诺与无穷 (Zeno's Paradox)**: 几何级数可视化。展示无限个步骤如何在有限时间内完成。
+- **🔢 哥德尔配数 (Gödel Numbering)**: 概念演示器。展示如何将形式系统的字符串（如 MIU）转化为唯一的数字，使数学能够谈论自身。
+- **🛡️ 一致性与完全性**: 可视化哥德尔第一定理的核心结论——在足够复杂的系统中，一致性与完全性不可兼得。
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ 技术栈
+
+- **React 19**: 构建用户界面。
+- **TypeScript**: 强类型开发。
+- **Tailwind CSS**: 现代化的样式设计。
+- **HTML5 Canvas**: 用于高性能的图形渲染（粒子系统、分形绘制）。
+- **Lucide React**: UI 图标库。
+
+## 💡 关于
+
+本项目的灵感来源于 MIT 课程《Godel, Escher, Bach: A Mental Space Odyssey》以及原著书籍。旨在帮助读者通过直观的互动体验，理解书中晦涩但迷人的数学、逻辑与哲学概念。
